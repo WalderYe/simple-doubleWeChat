@@ -2,16 +2,13 @@ from tkinter import *
 from tkinter.filedialog import askdirectory
 import os
 import subprocess
-
 def selectPath():
     path_ = askdirectory()
     path.set(path_)
-
 def startWC():
     f = path.get()
     f = f.replace("/", os.sep)
     subprocess.Popen("start WeChat.exe && WeChat.exe", shell = True, cwd = f)
-
 root = Tk()
 path = StringVar()
 root.title("双开微信")
